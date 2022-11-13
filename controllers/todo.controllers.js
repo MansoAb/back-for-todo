@@ -7,11 +7,11 @@ module.exports.controllers = {
   },
   for_post: async function (req, res) {
     const { text, bl } = req.body;
-    await Todo.create({
+    const todo = await Todo.create({
       text,
       bl,
     });
-    res.json("Дело добавлено.");
+    res.json(todo);
   },
   for_delete: async function (req, res) {
     const { id } = req.params;

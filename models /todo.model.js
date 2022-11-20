@@ -1,10 +1,14 @@
 const mongoose = require("mongoose");
 
-const studentSchema = mongoose.Schema({
+const todoSchema = mongoose.Schema({
   text: String,
   bl: Boolean,
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
-const Todo = mongoose.model("Todo", studentSchema);
+const Todo = mongoose.model("Todo", todoSchema);
 
 module.exports = Todo;
